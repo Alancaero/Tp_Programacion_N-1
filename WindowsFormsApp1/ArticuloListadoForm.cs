@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using LogicaNegocio;
 
-namespace WindowsFormsApp1
+namespace Vista
 {
     public partial class ArticuloListadoForm : Form
     {

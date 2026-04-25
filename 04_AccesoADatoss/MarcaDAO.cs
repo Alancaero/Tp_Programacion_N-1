@@ -4,9 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace _04_AccesoADatoss
+namespace AccesoADatoss
 {
-    public class Class1
+    public class MarcaDAO
     {
+
     }
 }

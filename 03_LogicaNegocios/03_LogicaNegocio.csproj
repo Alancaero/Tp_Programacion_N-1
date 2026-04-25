@@ -7,8 +7,8 @@
     <ProjectGuid>{2A8C06AA-E0E8-4973-8241-1C27B8E3A11D}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>_03_LogicaNegocios</RootNamespace>
-    <AssemblyName>03_LogicaNegocios</AssemblyName>
+    <RootNamespace>LogicaNegocios</RootNamespace>
+    <AssemblyName>LogicaNegocios</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
