@@ -16,5 +16,10 @@ namespace WindowsFormsApp1
         {
             InitializeComponent();
         }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

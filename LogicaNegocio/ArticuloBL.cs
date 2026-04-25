@@ -1,6 +1,6 @@
 ﻿namespace LogicaNegocio
 {
-    public class Class1
+    public class ArticuloBL
     {
 
     }
