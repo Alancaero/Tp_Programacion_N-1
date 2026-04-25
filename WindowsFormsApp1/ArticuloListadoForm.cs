@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using LogicaNegocio;
 
 namespace WindowsFormsApp1
 {
@@ -15,6 +16,12 @@ namespace WindowsFormsApp1
         public ArticuloListadoForm()
         {
             InitializeComponent();
+            fillCombos();
+        }
+
+        private void fillCombos()
+        {
+            cboMarca = MarcaBL.GetAll();
         }
 
         private void btnBuscar_Click(object sender, EventArgs e)

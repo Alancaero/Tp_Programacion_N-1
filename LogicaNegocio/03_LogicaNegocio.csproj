@@ -6,8 +6,4 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\WindowsFormsApp1\02_Vista.csproj" />
-  </ItemGroup>
-
 </Project>
