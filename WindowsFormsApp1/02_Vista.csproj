@@ -32,6 +32,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>WindowsFormsApp1.Program</StartupObject>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -46,16 +49,40 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="MainPrincipal.cs">
+    <Compile Include="ArticuloAltaForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MainPrincipal.Designer.cs">
-      <DependentUpon>MainPrincipal.cs</DependentUpon>
+    <Compile Include="ArticuloAltaForm.Designer.cs">
+      <DependentUpon>ArticuloAltaForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ArticuloDetalleForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ArticuloDetalleForm.Designer.cs">
+      <DependentUpon>ArticuloDetalleForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ArticuloListadoForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ArticuloListadoForm.Designer.cs">
+      <DependentUpon>ArticuloListadoForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="MainPrincipal.resx">
-      <DependentUpon>MainPrincipal.cs</DependentUpon>
+    <EmbeddedResource Include="ArticuloAltaForm.resx">
+      <DependentUpon>ArticuloAltaForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ArticuloListadoForm.resx">
+      <DependentUpon>ArticuloListadoForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

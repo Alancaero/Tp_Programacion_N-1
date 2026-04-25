@@ -10,11 +10,11 @@ using System.Windows.Forms;
 
 namespace WindowsFormsApp1
 {
-    public partial class MainPrincipal : Form
+    public partial class ArticuloAltaForm : Form
     {
-        public MainPrincipal()
+        public ArticuloAltaForm()
         {
-
+            InitializeComponent();
         }
     }
 }
