@@ -16,7 +16,7 @@ namespace WindowsFormsApp1
         {
             InitializeComponent();
         }
-        //
+        
         private void busquedaDeArticulosToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Form formListado = new ArticuloListadoForm();
