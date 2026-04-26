@@ -43,7 +43,7 @@ namespace Vista
 
             dgvArticulos.DataSource = null;
             dgvArticulos.DataSource = articulos;
-
+            // Cambiar aca, esto va en bl, mira si necesitamos endpoints. 
             if (articulos.Count == 0)
             {
                 MessageBox.Show("No se encontraron artículos con los filtros ingresados.");
@@ -68,10 +68,29 @@ namespace Vista
 
         private void btnDetalle_Click(object sender, EventArgs e)
         {
-            Form formDetalle= new ArticuloDetalleForm();
+            Form formDetalle = new ArticuloDetalleForm();
             formDetalle.MdiParent = MdiParent;
             formDetalle.Dock = DockStyle.Fill;
             formDetalle.Show();
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            if (dgvArticulos.CurrentRow == null)
+            {
+                MessageBox.Show("Debe seleccionar un artículo para eliminar.");
+            }
+
+            Articulo articulo = (Articulo)dgvArticulos.CurrentRow.DataBoundItem;
+
+            try
+            {
+                ArticuloBL.Eliminar(articulo.Id);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }

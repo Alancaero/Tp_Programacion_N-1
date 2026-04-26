@@ -100,5 +100,22 @@ namespace AccesoADatos
                 _accesoADatos.cerrarConexion();
             }
         }
+
+        public void Eliminar(int id)
+        {
+            try
+            {
+                _accesoADatos.setearConsulta("DELETE FROM ARTICULOS WHERE Id = " + id);
+                _accesoADatos.ejecutarAccion();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error al eliminar el artículo: " + ex.Message);
+            }
+            finally
+            {
+                _accesoADatos.cerrarConexion();
+            }
+        }
     }
 }

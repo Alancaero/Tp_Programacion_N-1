@@ -13,7 +13,7 @@ namespace LogicaNegocio
             ArticuloDAO dao = new ArticuloDAO();
 
             var resultado = dao.GetByFilter(codigo, nombre, marca, categoria);
-            
+
             return resultado;
         }
 
@@ -34,7 +34,7 @@ namespace LogicaNegocio
 
             foreach (Marca item in listaMarcas)
             {
-                if(marca == item.Descripcion)
+                if (marca == item.Descripcion)
                 {
                     auxMarcaId = item.Id;
                 }
@@ -55,7 +55,13 @@ namespace LogicaNegocio
             if (auxCategoriaId == -1)
                 throw new Exception("La categoría seleccionada no es válida");
 
-            dao.Guardar(codigo, nombre, auxMarcaId, auxCategoriaId, decimal.Parse(precio), descripcion);                                                     
+            dao.Guardar(codigo, nombre, auxMarcaId, auxCategoriaId, decimal.Parse(precio), descripcion);
+        }
+
+        public static void Eliminar(int id)
+        {
+            ArticuloDAO dao = new ArticuloDAO();
+            dao.Eliminar(id);
         }
     }
 }
