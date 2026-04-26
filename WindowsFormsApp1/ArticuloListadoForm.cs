@@ -65,5 +65,13 @@ namespace Vista
             formAlta.Dock = DockStyle.Fill;
             formAlta.Show();
         }
+
+        private void btnDetalle_Click(object sender, EventArgs e)
+        {
+            Form formDetalle= new ArticuloDetalleForm();
+            formDetalle.MdiParent = MdiParent;
+            formDetalle.Dock = DockStyle.Fill;
+            formDetalle.Show();
+        }
     }
 }
