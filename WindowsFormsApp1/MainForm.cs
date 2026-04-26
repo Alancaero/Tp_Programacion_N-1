@@ -46,5 +46,14 @@ namespace Vista
         {
             Close();
         }
+
+        private void gestionDeMarcasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            lblMensaje.Visible = false;
+            Form formMarcas = new MarcaGestionForm();
+            formMarcas.MdiParent = this;
+            formMarcas.Dock = DockStyle.Fill;
+            formMarcas.Show();
+        }
     }
 }
