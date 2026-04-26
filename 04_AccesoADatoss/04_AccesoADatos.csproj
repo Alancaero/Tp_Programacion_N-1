@@ -7,8 +7,8 @@
     <ProjectGuid>{68F4326B-94A8-4E22-BAD8-C00441E9E875}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>AccesoADatoss</RootNamespace>
-    <AssemblyName>AccesoADatoss</AssemblyName>
+    <RootNamespace>AccesoADatos</RootNamespace>
+    <AssemblyName>AccesoADatos</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
@@ -42,12 +42,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AccesoADatosDAO.cs" />
+    <Compile Include="ArticuloDAO.cs" />
+    <Compile Include="CategoriaDAO.cs" />
     <Compile Include="MarcaDAO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Dominios\01_Dominio.csproj">
-      <Project>{A93F6170-A765-4DC4-95F8-8263C004FDB6}</Project>
+      <Project>{a93f6170-a765-4dc4-95f8-8263c004fdb6}</Project>
       <Name>01_Dominio</Name>
     </ProjectReference>
   </ItemGroup>

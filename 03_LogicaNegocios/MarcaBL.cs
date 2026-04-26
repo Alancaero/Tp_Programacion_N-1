@@ -1,4 +1,4 @@
-﻿using AccesoADatoss;
+﻿using AccesoADatos;
 using Dominio;
 using System.Collections.Generic;
 
@@ -8,8 +8,7 @@ namespace LogicaNegocio
     {
         public static List<Marca> GetMarcas()
         {
-            MarcaDAO dao = new MarcaDAO();
-            
+            MarcaDAO dao = new MarcaDAO();            
             return dao.GetMarcas();
         }
 

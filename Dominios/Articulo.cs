@@ -45,13 +45,25 @@ namespace Dominio
                 _precio = value;
             }
         }
-
-
+        
         public string Descripcion { get; set; }
         public Marca Marca { get; set; }
         public Categoria Categoria { get; set; }        
         public List<Imagen> Imagenes { get; set; } = new List<Imagen>();
 
+        // Se agregan estas propiedades para mostrar la descripción de Marca y Categoría en el DataGridView
+        // No logre que la grilla pueda mostrar Marca.Descripcion y Categoria.Descripcion directamente
+        public string MarcaDescripcion
+        {
+            get { return Marca != null ? Marca.Descripcion : ""; }
+        }
+
+        public string CategoriaDescripcion
+        {
+            get { return Categoria != null ? Categoria.Descripcion : ""; }
+        }
+
+        public int CantidadImagenes { get; set; }
 
     }
 }

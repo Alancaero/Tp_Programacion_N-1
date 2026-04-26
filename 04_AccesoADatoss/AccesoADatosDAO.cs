@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Dominio;
-namespace AccesoADatoss
+namespace AccesoADatos
 {
     public class AccesoADatosDAO
     {

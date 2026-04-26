@@ -7,8 +7,8 @@
     <ProjectGuid>{2A8C06AA-E0E8-4973-8241-1C27B8E3A11D}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>LogicaNegocios</RootNamespace>
-    <AssemblyName>LogicaNegocios</AssemblyName>
+    <RootNamespace>LogicaNegocio</RootNamespace>
+    <AssemblyName>LogicaNegocio</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
@@ -49,11 +49,11 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\04_AccesoADatoss\04_AccesoADatos.csproj">
-      <Project>{68F4326B-94A8-4E22-BAD8-C00441E9E875}</Project>
+      <Project>{68f4326b-94a8-4e22-bad8-c00441e9e875}</Project>
       <Name>04_AccesoADatos</Name>
     </ProjectReference>
     <ProjectReference Include="..\Dominios\01_Dominio.csproj">
-      <Project>{A93F6170-A765-4DC4-95F8-8263C004FDB6}</Project>
+      <Project>{a93f6170-a765-4dc4-95f8-8263c004fdb6}</Project>
       <Name>01_Dominio</Name>
     </ProjectReference>
   </ItemGroup>

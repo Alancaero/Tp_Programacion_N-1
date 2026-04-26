@@ -8,21 +8,21 @@ using System.Threading.Tasks;
 
 namespace AccesoADatos
 {
-    public class MarcaDAO
+    public class CategoriaDAO
     {
         private AccesoADatosDAO _accesoADatos = new AccesoADatosDAO();
 
-        public List<Marca> GetMarcas()
+        public List<Categoria> GetCategorias()
         {
             try
             {
-                List<Marca> lista = new List<Marca>();
-                _accesoADatos.setearConsulta("Select * From Marcas");
+                List<Categoria> lista = new List<Categoria>();
+                _accesoADatos.setearConsulta("Select * From Categorias");
                 _accesoADatos.ejecutarLectura();
 
                 while (_accesoADatos.Lector.Read())
                 {
-                    Marca aux = new Marca();
+                    Categoria aux = new Categoria();
                     aux.Id = (int)_accesoADatos.Lector["Id"];
                     aux.Descripcion =(string)_accesoADatos.Lector["Descripcion"];
                     lista.Add(aux);

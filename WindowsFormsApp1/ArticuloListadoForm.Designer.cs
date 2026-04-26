@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.grpBoxFiltros = new System.Windows.Forms.GroupBox();
             this.btnLimpiar = new System.Windows.Forms.Button();
             this.btnBuscar = new System.Windows.Forms.Button();
@@ -89,6 +89,7 @@
             this.btnLimpiar.TabIndex = 12;
             this.btnLimpiar.Text = "Limpiar";
             this.btnLimpiar.UseVisualStyleBackColor = true;
+            this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
             // 
             // btnBuscar
             // 
@@ -178,14 +179,14 @@
             this.dgvArticulos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvArticulos.BackgroundColor = System.Drawing.SystemColors.InactiveCaption;
             this.dgvArticulos.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvArticulos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvArticulos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvArticulos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvArticulos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Nombre,
@@ -267,43 +268,50 @@
             // 
             // Nombre
             // 
+            this.Nombre.DataPropertyName = "Nombre";
             this.Nombre.HeaderText = "Nombre";
             this.Nombre.Name = "Nombre";
             this.Nombre.ReadOnly = true;
             // 
             // Codigo
             // 
+            this.Codigo.DataPropertyName = "Codigo";
             this.Codigo.HeaderText = "Código";
             this.Codigo.Name = "Codigo";
             this.Codigo.ReadOnly = true;
             // 
             // Descripcion
             // 
+            this.Descripcion.DataPropertyName = "Descripcion";
             this.Descripcion.HeaderText = "Descripción";
             this.Descripcion.Name = "Descripcion";
             this.Descripcion.ReadOnly = true;
             // 
             // Precio
             // 
+            this.Precio.DataPropertyName = "Precio";
             this.Precio.HeaderText = "Precio";
             this.Precio.Name = "Precio";
             this.Precio.ReadOnly = true;
             // 
             // Marca
             // 
+            this.Marca.DataPropertyName = "MarcaDescripcion";
             this.Marca.HeaderText = "Marca";
             this.Marca.Name = "Marca";
             this.Marca.ReadOnly = true;
             // 
             // Categoria
             // 
+            this.Categoria.DataPropertyName = "CategoriaDescripcion";
             this.Categoria.HeaderText = "Categoría";
             this.Categoria.Name = "Categoria";
             this.Categoria.ReadOnly = true;
             // 
             // Imagenes
             // 
-            this.Imagenes.HeaderText = "Imagenes";
+            this.Imagenes.DataPropertyName = "CantidadImagenes";
+            this.Imagenes.HeaderText = "Cantidad imagenes";
             this.Imagenes.Name = "Imagenes";
             this.Imagenes.ReadOnly = true;
             // 
