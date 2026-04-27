@@ -2,6 +2,7 @@
 using Dominio;
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 
 namespace AccesoADatos
 {
@@ -90,7 +91,7 @@ namespace AccesoADatos
                 _accesoADatos.setearConsulta(
                     "INSERT INTO ARTICULOS (Codigo, Nombre, Descripcion, Precio, IdMarca, IdCategoria) " +
                     "OUTPUT INSERTED.Id " +
-                    "VALUES ('" + codigo + "', '" + nombre + "', '" + descripcion + "', " + precio + ", " + marcaId + ", " + categoriaId + ")"
+                    "VALUES ('" + codigo + "', '" + nombre + "', '" + descripcion + "', " + precio.ToString(CultureInfo.InvariantCulture) + ", " + marcaId + ", " + categoriaId + ")"
                 );
                 //_accesoADatos.ejecutarAccion();
                 _accesoADatos.ejecutarLectura();
@@ -115,7 +116,7 @@ namespace AccesoADatos
             {
                 _accesoADatos.setearConsulta(
                     "UPDATE ARTICULOS " +
-                    "SET Codigo = '" + codigo + "', Nombre = '" + nombre + "', Descripcion = '" + descripcion + "', Precio = " + precio + ", IdMarca = " + marcaId + ", IdCategoria = " + categoriaId +
+                    "SET Codigo = '" + codigo + "', Nombre = '" + nombre + "', Descripcion = '" + descripcion + "', Precio = " + precio.ToString(CultureInfo.InvariantCulture) + ", IdMarca = " + marcaId + ", IdCategoria = " + categoriaId +
                     " WHERE Id = " + id
                 );
                 _accesoADatos.ejecutarAccion();
