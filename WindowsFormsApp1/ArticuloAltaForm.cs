@@ -15,6 +15,7 @@ namespace Vista
     public partial class ArticuloAltaForm : Form
     {
         private Articulo _articulo;
+        private string rutaImagen;
 
         public ArticuloAltaForm()
         {
@@ -36,12 +37,12 @@ namespace Vista
 
                 if(_articulo == null)
                 {
-                    ArticuloBL.Guardar(txtCodigo.Text, txtNombre.Text, cboMarca.Text, cboCategoria.Text, txtPrecio.Text, txtDescripcion.Text);
+                    ArticuloBL.Guardar(txtCodigo.Text, txtNombre.Text, cboMarca.Text, cboCategoria.Text, txtPrecio.Text, txtDescripcion.Text, rutaImagen);
                     MessageBox.Show("Artículo guardado exitosamente.");
                     Limpiar();
                 } else
                 {
-                    ArticuloBL.Modificar(_articulo.Id, txtCodigo.Text, txtNombre.Text, cboMarca.Text, cboCategoria.Text, txtPrecio.Text, txtDescripcion.Text);
+                    ArticuloBL.Modificar(_articulo.Id, txtCodigo.Text, txtNombre.Text, cboMarca.Text, cboCategoria.Text, txtPrecio.Text, txtDescripcion.Text, rutaImagen);
                     MessageBox.Show("Artículo modificado exitosamente.");
                     Close();
                 }
@@ -74,8 +75,12 @@ namespace Vista
             txtNombre.Clear();
             txtPrecio.Clear();
             txtDescripcion.Clear();
+            txtUrlImagen.Clear();
             cboMarca.SelectedIndex = -1;
             cboCategoria.SelectedIndex = -1;
+
+            rutaImagen = string.Empty;
+            pbxImagen.Image = Properties.Resources._noImagen_Lobo_Idolo;
         }
 
         private void btnLimpiar_Click(object sender, EventArgs e)
@@ -88,6 +93,40 @@ namespace Vista
             Close();
         }
 
+        private void txtUrlImagen_Leave(object sender, EventArgs e)
+        {
+            rutaImagen = txtUrlImagen.Text;
+            cargarImagen(rutaImagen);
+        }
+
+        private void btnBuscarImagen_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog archivo = new OpenFileDialog();
+            archivo.Filter = "jpg|*.jpg|png|*.png|jpeg|*.jpeg";
+
+            if (archivo.ShowDialog() == DialogResult.OK)
+            {
+                rutaImagen = archivo.FileName;
+                pbxImagen.Load(rutaImagen);
+
+                txtUrlImagen.Text = rutaImagen; 
+            }
+        }
+
+        private void cargarImagen(string imagen)
+        {
+            try
+            {
+                if (!string.IsNullOrWhiteSpace(imagen))
+                {
+                    pbxImagen.Load(imagen);
+                }
+            }
+            catch (Exception)
+            {
+                pbxImagen.Image = Properties.Resources._noImagen_Lobo_Idolo;
+            }
+        }
         private void CargarArticulo()
         {
             if (_articulo == null)

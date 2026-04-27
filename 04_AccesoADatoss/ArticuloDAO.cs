@@ -82,16 +82,22 @@ namespace AccesoADatos
             finally { _accesoADatos.cerrarConexion(); }
         }
 
-        public void Guardar(string codigo, string nombre, int marcaId, int categoriaId, decimal precio, string descripcion)
+        public int Guardar(string codigo, string nombre, int marcaId, int categoriaId, decimal precio, string descripcion)
         {
             try
             {
 
                 _accesoADatos.setearConsulta(
                     "INSERT INTO ARTICULOS (Codigo, Nombre, Descripcion, Precio, IdMarca, IdCategoria) " +
+                    "OUTPUT INSERTED.Id " +
                     "VALUES ('" + codigo + "', '" + nombre + "', '" + descripcion + "', " + precio + ", " + marcaId + ", " + categoriaId + ")"
                 );
-                _accesoADatos.ejecutarAccion();
+                //_accesoADatos.ejecutarAccion();
+                _accesoADatos.ejecutarLectura();
+                if (_accesoADatos.Lector.Read())
+                    return (int)_accesoADatos.Lector["Id"];
+
+                throw new Exception("No se pudo obtener el Id del artículo creado");
             }
             catch (Exception ex)
             {

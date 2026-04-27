@@ -1,5 +1,6 @@
 ﻿using AccesoADatos;
 using Dominio;
+using System;
 using System.Collections.Generic;
 
 namespace LogicaNegocio
@@ -14,6 +15,20 @@ namespace LogicaNegocio
 
             return resultado;
         }
+
+        public static void Agregar(int idArticulo, string rutaImagen)
+        {
+            if (idArticulo <= 0)
+                throw new Exception("Id de artículo inválido");
+
+            if (string.IsNullOrWhiteSpace(rutaImagen))
+                return;
+
+            ImagenDAO dao = new ImagenDAO();
+
+            dao.Agregar(idArticulo, rutaImagen);
+        }
+
     }
 }
 

@@ -30,7 +30,7 @@
         {
             this.grpBoxAltaArticulo = new System.Windows.Forms.GroupBox();
             this.cboCategoria = new System.Windows.Forms.ComboBox();
-            this.pctImagen = new System.Windows.Forms.PictureBox();
+            this.pbxImagen = new System.Windows.Forms.PictureBox();
             this.lblImagen = new System.Windows.Forms.Label();
             this.cboMarca = new System.Windows.Forms.ComboBox();
             this.txtDescripcion = new System.Windows.Forms.TextBox();
@@ -47,15 +47,19 @@
             this.btnLimpiar = new System.Windows.Forms.Button();
             this.btnGuardar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
+            this.txtUrlImagen = new System.Windows.Forms.TextBox();
+            this.btnBuscarImagen = new System.Windows.Forms.Button();
             this.grpBoxAltaArticulo.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pctImagen)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxImagen)).BeginInit();
             this.pnlInferior.SuspendLayout();
             this.SuspendLayout();
             // 
             // grpBoxAltaArticulo
             // 
+            this.grpBoxAltaArticulo.Controls.Add(this.btnBuscarImagen);
+            this.grpBoxAltaArticulo.Controls.Add(this.txtUrlImagen);
             this.grpBoxAltaArticulo.Controls.Add(this.cboCategoria);
-            this.grpBoxAltaArticulo.Controls.Add(this.pctImagen);
+            this.grpBoxAltaArticulo.Controls.Add(this.pbxImagen);
             this.grpBoxAltaArticulo.Controls.Add(this.lblImagen);
             this.grpBoxAltaArticulo.Controls.Add(this.cboMarca);
             this.grpBoxAltaArticulo.Controls.Add(this.txtDescripcion);
@@ -85,23 +89,23 @@
             this.cboCategoria.Size = new System.Drawing.Size(229, 24);
             this.cboCategoria.TabIndex = 16;
             // 
-            // pctImagen
+            // pbxImagen
             // 
-            this.pctImagen.Location = new System.Drawing.Point(498, 63);
-            this.pctImagen.Name = "pctImagen";
-            this.pctImagen.Size = new System.Drawing.Size(349, 356);
-            this.pctImagen.TabIndex = 3;
-            this.pctImagen.TabStop = false;
+            this.pbxImagen.Location = new System.Drawing.Point(505, 55);
+            this.pbxImagen.Name = "pbxImagen";
+            this.pbxImagen.Size = new System.Drawing.Size(374, 356);
+            this.pbxImagen.TabIndex = 3;
+            this.pbxImagen.TabStop = false;
             // 
             // lblImagen
             // 
             this.lblImagen.AutoSize = true;
             this.lblImagen.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblImagen.Location = new System.Drawing.Point(605, 18);
+            this.lblImagen.Location = new System.Drawing.Point(502, 24);
             this.lblImagen.Name = "lblImagen";
-            this.lblImagen.Size = new System.Drawing.Size(55, 16);
+            this.lblImagen.Size = new System.Drawing.Size(173, 16);
             this.lblImagen.TabIndex = 14;
-            this.lblImagen.Text = "Imagen:";
+            this.lblImagen.Text = "Ingrese el link de su imagen";
             // 
             // cboMarca
             // 
@@ -255,6 +259,22 @@
             this.btnCancelar.UseVisualStyleBackColor = true;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
+            // txtUrlImagen
+            // 
+            this.txtUrlImagen.Location = new System.Drawing.Point(701, 21);
+            this.txtUrlImagen.Name = "txtUrlImagen";
+            this.txtUrlImagen.Size = new System.Drawing.Size(219, 22);
+            this.txtUrlImagen.TabIndex = 17;
+            // 
+            // btnBuscarImagen
+            // 
+            this.btnBuscarImagen.Location = new System.Drawing.Point(566, 427);
+            this.btnBuscarImagen.Name = "btnBuscarImagen";
+            this.btnBuscarImagen.Size = new System.Drawing.Size(288, 27);
+            this.btnBuscarImagen.TabIndex = 18;
+            this.btnBuscarImagen.Text = "Seleccionar imagen guardada";
+            this.btnBuscarImagen.UseVisualStyleBackColor = true;
+            // 
             // ArticuloAltaForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -267,7 +287,7 @@
             this.Text = "ArticuloAltaForm";
             this.grpBoxAltaArticulo.ResumeLayout(false);
             this.grpBoxAltaArticulo.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pctImagen)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxImagen)).EndInit();
             this.pnlInferior.ResumeLayout(false);
             this.pnlInferior.PerformLayout();
             this.ResumeLayout(false);
@@ -289,11 +309,13 @@
         private System.Windows.Forms.Label lblMarca;
         private System.Windows.Forms.Label lblNombre;
         private System.Windows.Forms.Label lblCodigo;
-        private System.Windows.Forms.PictureBox pctImagen;
+        private System.Windows.Forms.PictureBox pbxImagen;
         private System.Windows.Forms.Label lblImagen;
         private System.Windows.Forms.Panel pnlInferior;
         private System.Windows.Forms.Button btnGuardar;
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Button btnLimpiar;
+        private System.Windows.Forms.Button btnBuscarImagen;
+        private System.Windows.Forms.TextBox txtUrlImagen;
     }
 }

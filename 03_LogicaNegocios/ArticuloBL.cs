@@ -21,7 +21,7 @@ namespace LogicaNegocio
             return resultado;
         }
 
-        public static void Guardar(string codigo, string nombre, string marca, string categoria, string precio, string descripcion)
+        public static void Guardar(string codigo, string nombre, string marca, string categoria, string precio, string descripcion, string rutaImagen)
         {
             ArticuloDAO dao = new ArticuloDAO();
 
@@ -30,6 +30,12 @@ namespace LogicaNegocio
 
             if (string.IsNullOrWhiteSpace(categoria))
                 throw new Exception("Debe seleccionar una categoría");
+
+            if (!decimal.TryParse(precio, out decimal precioDecimal))
+                throw new Exception("El precio debe ser un número válido");
+
+            if (precioDecimal < 0)
+                throw new Exception("El precio no puede ser negativo");
 
             var listaMarcas = MarcaBL.GetMarcas();
             var listaCategorias = CategoriaBL.GetCategorias();
@@ -51,24 +57,34 @@ namespace LogicaNegocio
                     auxCategoriaId = item.Id;
                 }
             }
-
-            // deberia corregir esto? en lugar de preguntar aca ¿crear un metodo en MarcaBL y CategoriaBL el cual me valide la existencia?
+            
             if (auxMarcaId == -1)
                 throw new Exception("La marca seleccionada no es válida");
 
             if (auxCategoriaId == -1)
                 throw new Exception("La categoría seleccionada no es válida");
 
-            dao.Guardar(codigo, nombre, auxMarcaId, auxCategoriaId, decimal.Parse(precio), descripcion);
+            int idArticulo = dao.Guardar(codigo, nombre, auxMarcaId, auxCategoriaId, precioDecimal, descripcion);
+
+            if (!string.IsNullOrWhiteSpace(rutaImagen))
+            {
+                ImagenBL.Agregar(idArticulo, rutaImagen);
+            }
         }
 
-        public static void Modificar(int id, string codigo, string nombre, string marca, string categoria, string precio, string descripcion)
+        public static void Modificar(int id, string codigo, string nombre, string marca, string categoria, string precio, string descripcion, string rutaImagen)
         {
             ArticuloDAO dao = new ArticuloDAO();
             if (string.IsNullOrWhiteSpace(marca))
                 throw new Exception("Debe seleccionar una marca");
             if (string.IsNullOrWhiteSpace(categoria))
                 throw new Exception("Debe seleccionar una categoría");
+
+            if (!decimal.TryParse(precio, out decimal precioDecimal))
+                throw new Exception("El precio debe ser un número válido");
+
+            if (precioDecimal < 0)
+                throw new Exception("El precio no puede ser negativo");
             var listaMarcas = MarcaBL.GetMarcas();
             var listaCategorias = CategoriaBL.GetCategorias();
             int auxCategoriaId = -1;
@@ -86,13 +102,20 @@ namespace LogicaNegocio
                 {
                     auxCategoriaId = item.Id;
                 }
-            }
+            }            
+
             // deberia corregir esto? en lugar de preguntar aca ¿crear un metodo en MarcaBL y CategoriaBL el cual me valide la existencia?
             if (auxMarcaId == -1)
                 throw new Exception("La marca seleccionada no es válida");
             if (auxCategoriaId == -1)
                 throw new Exception("La categoría seleccionada no es válida");
-            dao.Modificar(id, codigo, nombre, auxMarcaId, auxCategoriaId, decimal.Parse(precio), descripcion);
+           
+            dao.Modificar(id, codigo, nombre, auxMarcaId, auxCategoriaId, precioDecimal, descripcion);
+
+            if (!string.IsNullOrWhiteSpace(rutaImagen))
+            {
+                ImagenBL.Agregar(id, rutaImagen);
+            }
         }
 
         public static void Eliminar(int id)

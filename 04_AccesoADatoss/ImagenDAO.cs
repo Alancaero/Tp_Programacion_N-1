@@ -33,5 +33,25 @@ namespace AccesoADatos
                 throw;
             } finally { _accesoADatos.cerrarConexion(); }
         }
+        public void Agregar(int idArticulo, string imagenUrl)
+        {
+            try
+            {
+                _accesoADatos.setearConsulta(
+                    "INSERT INTO IMAGENES (IdArticulo, ImagenUrl) " +
+                    "VALUES (" + idArticulo + ", '" + imagenUrl + "')"
+                );
+
+                _accesoADatos.ejecutarAccion();
+            }
+            catch (Exception )
+            {
+                throw ;
+            }
+            finally
+            {
+                _accesoADatos.cerrarConexion();
+            }
+        }
     }
 }
